@@ -30,7 +30,7 @@ public class EjerciciosIfVideojuegos {
             System.out.println(" Tu personaje ta fuelte manin ");
         } else if (vida >= 30 && vida <= 70) {
             System.out.println(" Cógete unas venditas broski ");
-        } else if (vida > 30) {
+        } else if (vida <= 30) {
             System.out.println(" Tu personaje peligra! ⚠ ");
         }
 
@@ -83,17 +83,19 @@ public class EjerciciosIfVideojuegos {
 
         //   Si tiene menos de 800 → "No tienes suficientes V-Bucks"
 
-        int vBucks = 2000;
+        Scanner scan = new Scanner(System.in);
+        System.out.println(" Cuántos pavos tienes? ");
+        int vBucks = scan.nextInt();
         if (vBucks >= 2000) {
             System.out.println(" Puedes comprarte una skin legendaria makina! ");
-        }
-        if (vBucks >= 1200) {
+
+        } else if (vBucks >= 1200) {
             System.out.println(" Puedes comprar una skin épica brotheeer! ");
         }
-        if (vBucks >= 800) {
+        else if (vBucks >= 800) {
             System.out.println(" Puedes comprar una skin rarilla eh! ");
         }
-        if (vBucks < 800) {
+        else if (vBucks < 800) {
             System.out.println(" Lo siento, no tienes suficientes V-Bucks... ");
         }
 
@@ -135,6 +137,22 @@ public class EjerciciosIfVideojuegos {
 
         //   Entre 0 y 5 → "Madrugada, mejor dormir 😴"
 
+        Scanner scanner2 = new Scanner(System.in);
+        System.out.println(" Que hora es? (0-23)");
+        int hora = scanner2.nextInt();
+        if (hora >=6 && hora <= 11) {
+            System.out.println(" Es de mañana, los aldeanos están activos ☀ ");
+        }
+        if (hora >=12 && hora <= 18) {
+            System.out.println( " Es de tarde, hora de explorar :P ");
+        }
+        if (hora >=19 && hora <= 23) {
+            System.out.println(" Es de noche, cuidado con los mobs \uD83C\uDF19 ");
+        }
+        if (hora >=0 && hora <= 5) {
+            System.out.println(" Madrugada, mejor dormir! ");
+        }
+
 
         // ==============================
 
@@ -164,14 +182,36 @@ public class EjerciciosIfVideojuegos {
 
         //
 
+        Scanner scanner3 = new Scanner(System.in);
+        System.out.println( " Cuántos enemigos has derrotado? ");
+        int kills= scanner3.nextInt();
+        System.out.println(" Cuántas veces has muerto? ");
+        int muertes= scanner3.nextInt();
+        System.out.println(" Cuántos minutos has jugado? ");
+        int tiempo= scanner3.nextInt();
+        if (kills>=10){
+            System.out.println( " Logro Obtenido: Cazador experto 🏹 ");
+        }
+        if (muertes== 0){
+            System.out.println( " Logro Obtenido: Intocable 👑 ");
+        }
+        if (tiempo>60){
+            System.out.println( " Vaya! Nuevo Logro: Maratón gamer ⌛");
+        }
+        if (kills<muertes){
+            System.out.println( "Vaya... Logro desbloqueado: Necesitas entrenar!" );
+        }
+        else if (kills> 20 && muertes< 5){
+            System.out.println( " LOGRO: Eres un PRO absoluto 🔥🔥 ");
+        }
+
+
 
         // Extensión opcional:
 
         //   - Combina condiciones con && y || para logros más complejos.
 
         //   - Ejemplo: (kills > 20 && muertes < 5) → "Logro: PRO absoluto 🔥"
-        int kills = 12;
-        int muertes = 0;
     }
 }
 
